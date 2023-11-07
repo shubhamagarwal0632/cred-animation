@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+    <style>
+        @font-face {
+            font-family: gilroy-ragular;
+            src: url(font/Gilroy-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: gilroy-bold;
+            src: url(font/Gilroy-Bold.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100vh;
+            font-family: gilroy-ragular;
+        }
+
+        .main {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #0F0F0F;
+        }
+
+        nav {
+            width: 100%;
+            height: 20vh;
+            /* background-color: black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6.5vw 15vw;
+            color: white;
+        }
+
+        nav img {
+            width: 3.5vw;
+            object-fit: cover;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(201, 182, 182);
+            margin: 20px;
+            font-size: 1.5vw;
+            font-family: gilroy-bold;
+        }
+
+        .part1 {
+            width: 100%;
+            height: 80vh;
+            /* background-color: black; */
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center; */
+            align-items: center;
+        }
+
+        .part1 h1 {
+            font-size: 7.5vw;
+            font-family: gilroy-bold;
+            color: white;
+            line-height: 8vw;
+        }
+
+        .part1 p {
+            font-size: 2vw;
+            color: white;
+            margin-top: 4vw;
+            font-family: gilroy-bold;
+        }
+
+        .part1 button {
+            padding: 1.5vw 6vw;
+            border-radius: 4vw;
+            font-size: 1.5vw;
+            font-family: gilroy-bold;
+            margin-top: 4vw;
+            border: 1px solid black;
+        }
+
+        .part1 button:hover {
+            filter: invert(1);
+            transition: all ease 0.5s;
+        }
+
+        .part1-container {
+            margin-top: 5vw;
+            width: 100%;
+            height: 100%;
+
+            /* background-color: black; */
+            /* background-color: yellowgreen; */
+            text-align: center;
+        }
+
+        .part2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 115vh;
+            background-image: url(video-bg-mobile.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            overflow-y: hidden;
+
+            /* margin-top: 510px; */
+        }
+
+        .part2 img {
+            width: 26vw;
+
+            transition: all ease 0.5s;
+        }
+
+        #img-three {
+            position: absolute;
+            bottom: -2.5vw;
+        }
+
+
+        #img-two,
+        #img-four {
+            margin-bottom: -14vw;
+        }
+
+        #img-one,
+        #img-five {
+            margin-bottom: -24vw;
+        }
+
+        #img-one {
+            margin-right: -10vw;
+        }
+
+        #img-five {
+            margin-left: -10vw;
+        }
+
+        #img-four,
+        #img-center {
+            z-index: 1;
+        }
+
+        #img-three {
+            z-index: 2;
+        }
+
+        .part-same {
+            width: 100%;
+            height: 100vh;
+            background-color: #0F0F0F;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            padding: 6.5vw 15vw;
+            font-family: gilroy-bold;
+            color: white;
+        }
+
+        .part3 {
+
+            background-image: url(deserve-more-bg.jpg);
+            background-size: cover;
+        }
+
+        .part-same h1 {
+            font-size: 7vw;
+        }
+
+        .part-same h2 {
+            font-size: 2.5vw;
+        }
+
+        .part-same p {
+            font-size: 1.5vw;
+            line-height: 2vw;
+            width: 60%;
+        }
+
+        .part-same button {
+            margin-top: 2vw;
+            padding: 1.5vw 5vw;
+            border-radius: 50px;
+            border: 1px solid black;
+            font-size: 2.5vw;
+            outline: none;
+            font-family: gilroy-bold;
+        }
+
+        .part-same button:hover {
+            filter: invert(7);
+            transition: all ease 0.5s;
+        }
+
+        .strip {
+            width: 100%;
+            height: 28vh;
+            background-color: white;
+        }
+
+        .strip-div {
+            width: 100%;
+            height: 28vh;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: 2vw;
+            font-size: 2vw;
+            /* background-color: #0F0F0F; */
+            padding: 0 15vw;
+
+        }
+
+        .strip img {
+            width: 100%;
+        }
+
+        .part4 {
+            background-image: url(money-matters-bg.jpg);
+            background-size: cover;
+        }
+
+        /* part5 */
+
+
+        .part5 {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            /* border: 2px solid white; */
+        }
+
+        .left-part5 {
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+
+        .text-part {
+            transition: all ease 0.2s;
+            position: absolute;
+            bottom: -10%;
+        }
+
+        .text-part h1 {
+            line-height: 7vw;
+        }
+
+        .text-part p {
+            font-size: 1.2vw;
+            margin-top: 4vw;
+            width: 100%;
+        }
+
+        .right-part5 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .mobile-box {
+            width: 20vw;
+            height: 80vh;
+            /* margin: auto; */
+            /* margin-left: 7vw; */
+            border-radius: 2vw;
+            border: 0.1px solid rgba(255, 255, 255, 0.214);
+            box-shadow: 1px 0px 15px 2px rgba(207, 202, 202, 0.133) inset;
+            padding: 9px;
+            overflow: hidden;
+        }
+
+        .mobile-img {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            /* margin-left: -291%; */
+            transition: all ease 2s;
+        }
+
+        .mobile-box img {
+            width: 40vh;
+        }
+
+        #scroll-2,
+        #scroll-3,
+        #scroll-4 {
+            opacity: 0;
+            transition: all ease 0.5s;
+        }
+
+
+        .part6 {
+            width: 100%;
+            height: 65vh;
+            background-image: url(/images/neopop-image-mock.png);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            /* background-color: yellow; */
+        }
+
+
+        .part7 {
+            background-image: url(/images/security-bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .part8 {
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            background-image: url(/images/t);
+        }
+
+        .part8 .box-down {
+            width: 100%;
+            /* background-color: aliceblue; */
+            height: 100%;
+            display: flex;
+            align-items: end;
+            /* justify-content: flex-start; */
+        }
+
+        .part8 .box-down h1 {
+            font-size: 3.5vw;
+            word-spacing: 0.5;
+
+        }
+
+        .part8 p {
+            margin-top: 80px;
+            width: 100%;
+            font-size: 1vw;
+            font-family: gilroy-ragular;
+        }
+
+        .part9 {
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(59, 78, 115);
+            /* background-color: turquoise; */
+        }
+
+        .top-pt9 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 60vh;
+            gap: 7vw;
+            /* background-color: blueviolet; */
+        }
+
+        .bottom-pt9 {
+            width: 100%;
+            height: 40vh;
+            /* background-color: rgb(86, 226, 43); */
+        }
+
+        .rating {
+            /* width: 20%; */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* background-color: aliceblue; */
+        }
+        .number{
+            display: flex;
+            color: white;
+            align-items: center;
+            /* justify-content: center; */
+            gap: 2vw;
+        }
+        .number h1{
+            font-size: 9.2vw;
+            font-family:gilroy-bold;;
+        }
+
+        .number h2{
+            font-size: 2.8vw;
+        }
+
+        .img-btn{
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+        }
+
+        .img-btn img{
+            width: 9vw;
+        }
+        .img-btn .btn{
+            display: flex;
+            gap: 1.5vw  ;
+            align-items: center;
+            justify-content: center;
+            padding: 1vw 2.5vw;
+            border-radius: 4vw;
+            border: none;
+        }
+        .img-btn .btn h2 {
+            font-size: 1vw;
+        }
+        .img-btn .btn img{
+            width: 2.5vw;
+
+        }
+        .slider{
+            width: 65%;
+            height: 25vh;
+            color: #fff;
+            /* background-color: tan; */
+        }
+        .bottom-pt9{
+            display: flex;
+            align-items: start;
+            justify-content: center;
+        }
+
+        .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: #fff; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-pagination{
+        margin-top: 250px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+
+            <img src="cred-logo.webp" alt="">
+            <div class="na  v-right">
+                <a href="">credit score check</a>
+                <a href="">CRED pay</a>
+            </div>
+        </nav>
+        <div class="part1">
+            <div class="part1-container">
+
+                <h1>rewards for paying</h1>
+                <h1> credit card bills.</h1>
+                <p>join 9M+ members who win rewards and cashbacks everyday</p>
+                <button>Download CRED</button>
+            </div>
+        </div>
+        <div class="part2">
+            <img class="image" id="img-one" src="neopop-left-1.png" alt="">
+            <img class="image" id="img-two" src="neopop-left-2.png" alt="">
+            <img class="image" id="img-three" src="neopop-center.png" alt="">
+            <img class="image" id="img-four" src="neopop-right-1.png" alt="">
+            <img class="image" id="img-five" src="neopop-right-2.png" alt="">
+        </div>
+        <div class="part-same part3">
+
+
+            <h1>feel special</h1>
+            <h1> more often.</h1>
+            <h2>exclusive rewards for paying your bills</h2>
+            <p>every time you pay your credit card bills on CRED, you receive CRED coins. you can use these to win
+                exclusive rewards or get special access to curated products and experiences. on CRED, good begets good.
+            </p>
+            <button>Explore rewards</button>
+        </div>
+        <div class="strip">
+            <div class="strip-div">
+                <h5>rewards from brands you love.</h5>
+                <img src="brands-desktop.png" alt="">
+            </div>
+        </div>
+        <div class="part-same part4">
+
+
+            <h1>we take your money</h1>
+            <h1>matters seriously.</h1>
+            <h2>so that you don’t have to.</h2>
+            <p>never miss a due date with reminders to help you pay your bills on time, instant settlements mean you
+                never wait for your payments to go through and statement analysis lets you know where your money goes,
+                always.
+                Experience the upgrade
+            </p>
+            <button>Experience the upgrade</button>
+        </div>
+        <div class="part-same part5">
+            <div class="left-part5">
+
+                <div id="scroll-1" class="text-part">
+                    <h1>we’ve got</h1>
+                    <h1>your back.</h1>
+                    <p>gain complete control over your credit card with CRED Protect. receive category-based analysis of
+                        your spends, detect hidden charges, and track your credit limit in real-time.
+                    </p>
+                </div>
+                <div id="scroll-2" class="text-part">
+                    <h1>begin your</h1>
+                    <h1>winning</h1>
+                    <h1>streak.</h1>
+                    <p>use your CRED coins to participate in games and raffles to win the most exclusive rewards and
+                        cashbacks on CRED. good luck.</p>
+                </div>
+                <div id="scroll-3" class="text-part">
+                    <h1>for your</h1>
+                    <h1>eclectic taste.
+                    </h1>
+                    <p>get access to the CRED Store, a member-exclusive selection of products and experiences at special
+                        prices that complement your taste. this is the good life they speak of.
+                    </p>
+                </div>
+                <div id="scroll-4" class="text-part">
+                    <h1>more cash</h1>
+                    <h1>in your</h1>
+                    <h1>pockets.</h1>
+                    <p>switch to CRED RentPay and start paying rent with your credit card. this way you get up to 45
+                        days of credit free period
+                    </p>
+                </div>
+            </div>
+
+            <div class="right-part5">
+                <div class="mobile-box">
+                    <div class="mobile-img">
+
+
+                            <img id="img-1" src="/images/neopop-fold1.png" alt="">
+                            <img id="img-2" src="/images/neopop-fold2.png" alt="">
+                            <img id="img-3" src="/images/neopop-fold3.png" alt="">
+                            <img id="img-4" src="/images/neopop-fold4.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="part6">
+        </div>
+        <div class="part7 part-same">
+            <h1>security first.</h1>
+            <h1> and second.</h1>
+            <h2>what’s yours remains only yours.</h2>
+            <p>CRED ensures that all your personal data and transactions are encrypted, and secured so what’s yours
+                remains only yours. there’s no room for mistakes because we didn’t leave any.
+            </p>
+            <button>Become a member</button>
+        </div>
+
+        <div class="part8 part-same">
+            <div class="box-down">
+                <h1>the story of <br>
+                    CRED begins<br>
+                    with trust.</h1>
+            </div>
+            <p>trust as a virtue has consistently played an essential role in every great human achievement. and
+                consistently, its importance has been overlooked. not just by individuals, but by entire societies. we
+                felt it was time someone gave it the spotlight it deserves. especially for the ones who live by this
+                virtue: the trustworthy.
+                so we thought of creating a system that rewards its members for doing good and being trustworthy. this
+                way, trust as a virtue becomes something to aspire to, just the way it should be. then we went one step
+                ahead: we built it. we know we are on the right track because here you are.
+                if you make it to CRED, congratulations and welcome. we have a lot of things planned for you.
+            </p>
+        </div>
+
+        <div class="part9">
+            <div class="top-pt9">
+                <div class="rating">
+                    <div class="number">
+                        <h1>4.8</h1>
+                        <h2>app <br>store</h2>
+                    </div>
+                    <div class="img-btn">
+                        <img src="/images/rating-ios.png" alt="">
+                        <button class="btn">
+                            <img src="/images/apple-store-logo.png" alt="">
+                            <h2>Download the app
+                            </h2>
+                        </button>
+                        
+                        
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="number">
+                        <h1>4.7</h1>
+                        <h2>play <br>store</h2>
+                    </div>
+                    <div class="img-btn">
+                        <img src="/images/rating-ios.png" alt="">
+                        <button class="btn">
+                            <img src="/images/play-store-logo.png" alt="">
+                            <h2>Download the app
+                            </h2>
+                        </button>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-pt9">
+                <div class="slider">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">"this is a great app loaded with functionality and simplicity yet elegant and intuitive. a must have for the plastic money users. keeps me in financial discipline and helps me take the billing and payment worries out of my mind"<br><br>
+                            ranesh bhattacharya</div>
+                          <div class="swiper-slide">"in love! such a seamless user experience, smooth as freshly waxed pair of legs! very intuitive and easy to use application. good job people, good job."
+                            <br><br>
+                            parul mehra</div>
+                          <div class="swiper-slide">"have been using the app for an year... very happy with this. it greatly avoids the need for searching for statements individually and logging in to pay them all. with cred i can happily pay all my cc bills with a single click. love the experience."
+                            <br><br>
+                            pushpalatha a</div>
+                          <div class="swiper-slide">"great app, paying dues of credit card was never that much easy and fast. few more rewarding features also available there like showing credit score, can easily pay rent, getting cashback whenever paying cc dues. lots more. i really loves cred."
+                            <br><br>
+                            sanjeev kataria</div>
+                          <div class="swiper-slide">"i would say one of the best platforms to manage your credit card payments with lot of advantages and rewards. you can even pay rent to your owner using credit card. that's really cool. thanks for all the awesomeness. keep inventing !!"
+                                <br><br>
+                            jagadeeswar reddy singam</div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // let tl = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.part2',
+    //         start: '0% 50%',
+    //         end: '0% 50%',
+    //         scrub: 1,
+    //     }
+    // })
+    gsap.from('.image', {
+        scale: 0,
+        y: 700,
+        // stagger:1,
+        duration: 2,
+        scrollTrigger: {
+            trigger: '.part2',
+            start: '0% 50%',
+            end: '0% 50%',
+            // scrub: 1,
+        }
+
+        // scale: 1,
+        // opacity: 0
+    })
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.part5',
+            start: '50% 50%',
+            end: '150% 0%',
+            // markers: 'true',
+            pin: true,
+            scrub: 2,
+            // duration:5   
+        }
+    })
+
+    tl.to('#scroll-1', {
+        bottom: '60vh',
+        duration: 5,
+        delay: 1,
+        opacity: 0
+    }).to('#scroll-2', {
+        delay: 1,
+        opacity: 1,
+    }).to('#img-1', {
+        x: '-100%'
+    }).to('#img-2', {
+        x: '-100%'
+    })
+
+
+    tl.to('#scroll-2', {
+        delay: 20,
+        duration: 5,
+        bottom: '60vh',
+        opacity: 0
+    }).to('#scroll-3', {
+        opacity: 1,
+    }).to('#img-2', {
+        x: '-200%'
+    }).to('#img-3', {
+        x: '-200%'
+    })
+
+        .to('#scroll-3', {
+            delay: 20,
+            duration: 5,
+            bottom: "60vh",
+            opacity: 0
+        }).to('#scroll-4', {
+            opacity: 1,
+        }).to('#img-3', {
+            x: '-300%'
+        }).to('#img-4', {
+            x: '-300%'
+        }).to('#scroll-4', {
+            duration: 5,
+            delay: 20,
+            bottom: '60vh',
+            opacity: 0
+        })
+
+
+    // jo mobile me alag se animation chal rhi h jaha pr text ki opacity ko 1 kr rhe h uske sathme mobile ki animation ko bhi shi se kr denge
+
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+</script>
+
+</html>
